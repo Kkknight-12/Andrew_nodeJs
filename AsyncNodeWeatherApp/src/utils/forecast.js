@@ -2,10 +2,8 @@ const request = require('request');
 
 const foreCast = (latitude, longitute, callback) => {
     const url = 'http://api.weatherstack.com/current?access_key=dbb804baf9663ae7581848f1c06d5652&query=' + latitude + ',' + longitute ;
-    // const url = 'http://api.weatherstack.com/current?access_key=dbb804baf9663ae7581848f1c06d5652&query=' + latitude + ',' + longitute + '&units=f';
-
+    
     request( { url, json: true}, (error, {body}) => {
-        // console.log(resp.body)
         if(error){
             callback('Unable to connect to the network', undefined)
     }
